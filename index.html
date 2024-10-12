@@ -26,13 +26,442 @@
 <body>
 	<!-- wrapper -->
 	<div class="wrapper">
+		<!-- header -->
+		<header class="header" id="header">
+			<div class="container">
+				<div class="header__wrapper">
+					<div class="header__inner">
+						<a href="index.html" class="header__logotype">
+							<img src="img/logotype.svg" width="269" height="44" alt="ЖК Маяк">
+							<img src="img/logotype-white.svg" width="269" height="44" alt="ЖК Маяк" class="white">
+						</a>
+						<button class="hamburger" id="hamburger-toggle" aria-label="Меню">
+							<span class="hamburger__inner"></span>
+							<span class="hamburger__inner"></span>
+							<span class="hamburger__inner"></span>
+						</button>
+					</div>
+					<picture class="header__img">
+						<img src="img/mayak.svg" width="690" height="209" alt="МАЯК">
+					</picture>
+				</div>
+				<div class="header__bottom">
+					<a href="tel:+78124265971" class="header__link">+7 (812) 426 59-71</a>
+					<a href="#" class="header__link">связаться</a>
+				</div>
+			</div>
+		</header>
+		<!-- end of header -->
 		<!-- content -->
 		<div class="wrapper__content">
-			<!-- <div id="lottie"></div> -->
+			<!-- main -->
+			<section class="main" id="main">
+				<div class="main__bg">
+					<img src="img/main-bg.png" alt="Image">
+				</div>
+			</section>
+			<!-- end of main -->
+			<!-- promo -->
+			<section class="promo" id="promo">
+				<div class="container">
+					<h2 class="promo__heading">ЖК <br>в сердце <br>Дербента</h2>
+					<picture class="promo__bg">
+						<img src="img/main-bg.jpg" alt="Image">
+					</picture>
+				</div>
+			</section>
+			<!-- end of promo -->
+			<!-- gallery -->
+			<div class="gallery" id="gallery">
+				<div class="gallery__slider">
+					<div class="swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<picture class="gallery__img" data-swiper-parallax-x="50%">
+									<img src="img/gallery-01.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="swiper-slide">
+								<picture class="gallery__img" data-swiper-parallax-x="50%">
+									<img src="img/gallery-02.jpg" alt="Image">
+								</picture>
+							</div>
+						</div>
+					</div>
+					<button class="swiper-button-prev">
+						<span class="swiper-button-circle">Назад</span>
+					</button>
+					<button class="swiper-button-next">
+						<span class="swiper-button-circle">Далее</span>
+					</button>
+				</div>
+			</div>
+			<!-- end of gallery -->
+			<!-- promo details -->
+			<section class="promo-details" id="promo-details">
+				<div class="container">
+					<div class="promo-details__top">
+						<h2 class="promo-details__heading">
+							ЧЕЛОВЕК
+							В ЦЕНТРЕ
+							ВНИМАНИЯ
+						</h2>
+						<p class="promo-details__description">Во дворе все продумано, чтобы вы могли чувствовать себя как на природе: здесь найдутся убаюкивающие гамаки, тенистые перголы и дорожки для неспешных прогулок.</p>
+					</div>
+					<div class="promo-details__wrapper">
+						<div class="promo-details-card promo-details__item" style="background-image: url(img/promo-details-01.jpg);">
+							<h3 class="promo-details-card__title">Детская</h3>
+							<p class="promo-details-card__description">Безопасные игровые зоны</p>
+						</div>
+						<div class="promo-details-card promo-details__item" style="background-image: url(img/promo-details-02.jpg);">
+							<h3 class="promo-details-card__title">Спорт</h3>
+							<p class="promo-details-card__description">Тренажёры и спортивные площадки</p>
+						</div>
+						<div class="promo-details-card promo-details__item" style="background-image: url(img/promo-details-03.jpg);">
+							<h3 class="promo-details-card__title">Тихие зоны</h3>
+							<p class="promo-details-card__description">Места для спокойного отдыха</p>
+						</div>
+						<div class="promo-details-card promo-details__item" style="background-image: url(img/promo-details-02.jpg);">
+							<h3 class="promo-details-card__title">Спорт</h3>
+							<p class="promo-details-card__description">Тренажёры и спортивные площадки</p>
+						</div>
+						<div class="promo-details-card promo-details__item" style="background-image: url(img/promo-details-03.jpg);">
+							<h3 class="promo-details-card__title">Тихие зоны</h3>
+							<p class="promo-details-card__description">Места для спокойного отдыха</p>
+						</div>
+					</div>
+					<a href="#" class="promo-details__more">Смотреть зоны</a>
+				</div>
+			</section>
+			<!-- end of promo details -->
+			<!-- solutions -->
+			<section class="solutions" id="solutions">
+				<div class="container">
+					<h2 class="solutions__heading">
+						Технические
+						решения и
+						безопасность
+					</h2>
+					<div class="solutions__wrapper">
+						<div class="solutions-card solutions__item">
+							<picture class="solutions-card__img">
+								<img src="img/solutions-01.jpg" alt="Image">
+							</picture>
+							<div class="solutions-card__body">
+								<h3 class="solutions-card__title">Современные лифты </h3>
+								<p class="solutions-card__description">обеспечивают комфортное перемещение между этажами <br>и высокие стандарты безопасности</p>
+							</div>
+						</div>
+						<div class="solutions-card solutions__item">
+							<picture class="solutions-card__img">
+								<img src="img/solutions-02.jpg" alt="Image">
+							</picture>
+							<div class="solutions-card__body">
+								<h3 class="solutions-card__title">Энерго-эффективные окна </h3>
+								<p class="solutions-card__description">обеспечивают защиту от внешних воздействий <br>и шумовой изоляции </p>
+							</div>
+						</div>
+						<div class="solutions-card solutions__item">
+							<picture class="solutions-card__img">
+								<img src="img/solutions-03.jpg" alt="Image">
+							</picture>
+							<div class="solutions-card__body">
+								<h3 class="solutions-card__title">Системы видео-наблюдения </h3>
+								<p class="solutions-card__description">обеспечивают круглосуточный мониторинг и запись событий </p>
+							</div>
+						</div>
+						<div class="solutions-card solutions__item">
+							<div class="solutions-card__app">
+								<a href="#" class="solutions-card__app-btn">
+									<img src="img/app-store.svg" alt="App Store">
+								</a>
+								<a href="#" class="solutions-card__app-btn">
+									<img src="img/google-play.svg" alt="Google Play">
+								</a>
+							</div>
+							<div class="solutions-card__body">
+								<h3 class="solutions-card__title">Мобильное <br>приложение</h3>
+							</div>
+						</div>
+					</div>
+					<a href="#" class="solutions__more">Подробнее</a>
+				</div>
+			</section>
+			<!-- end of solutions -->
+			<!-- about promo -->
+			<section class="about-promo" id="about-promo">
+				<div class="container">
+					<h2 class="about-promo__heading">ДОМ С <br>ХАРАКТЕРОМ</h2>
+					<p class="about-promo__description">Элегантный дизайн от известного дизайн бюро</p>
+					<picture class="about-promo__bg">
+						<img src="img/about-promo-01.jpg" alt="Image">
+					</picture>
+				</div>
+			</section>
+			<!-- end of about promo -->
+			<!-- main advantages -->
+			<div class="main-advantages" id="main-advantages">
+				<div class="container">
+					<div class="main-advantages__wrapper">
+						<div class="main-advantages-card main-advantages__item">
+							<div class="main-advantages-card__images">
+								<picture class="main-advantages-card__img">
+									<img src="img/main-advantages-01.jpg" alt="Image">
+								</picture>
+								<picture class="main-advantages-card__additional-img main-advantages-card__additional-img--top-left">
+									<img src="img/main-advantages-add-01.jpg" alt="Image">
+								</picture>
+								<picture class="main-advantages-card__additional-img main-advantages-card__additional-img--bottom-left">
+									<img src="img/main-advantages-add-02.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="main-advantages-card__body">
+								<h3 class="main-advantages-card__title">Современная навигация</h3>
+								<p class="main-advantages-card__description">Мы уделили особое внимание навигации внутри нашего комплекса. </p>
+							</div>
+						</div>
+						<div class="main-advantages-card main-advantages__item">
+							<div class="main-advantages-card__images">
+								<picture class="main-advantages-card__img">
+									<img src="img/main-advantages-02.jpg" alt="Image">
+								</picture>
+								<picture class="main-advantages-card__additional-img main-advantages-card__additional-img--top-right">
+									<img src="img/main-advantages-add-03.jpg" alt="Image">
+								</picture>
+								<picture class="main-advantages-card__additional-img main-advantages-card__additional-img--bottom-right">
+									<img src="img/main-advantages-add-04.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="main-advantages-card__body">
+								<h3 class="main-advantages-card__title">Функциональные зоны ожидания</h3>
+								<p class="main-advantages-card__description">Предусмотрели удобные <br>зоны для отдыха</p>
+							</div>
+						</div>
+						<div class="main-advantages-card main-advantages-card--bottom main-advantages__item">
+							<div class="main-advantages-card__images">
+								<picture class="main-advantages-card__img">
+									<img src="img/main-bg.jpg" alt="Image">
+								</picture>
+								<picture class="main-advantages-card__additional-img">
+									<img src="img/main-advantages-add-05.jpg" alt="Image">
+								</picture>
+								<picture class="main-advantages-card__additional-img main-advantages-card__additional-img--center">
+									<img src="img/main-advantages-add-06.jpg" alt="Image">
+								</picture>
+							</div>
+							<div class="main-advantages-card__body">
+								<h3 class="main-advantages-card__title">Визуальная комфортность</h3>
+								<p class="main-advantages-card__description">Безопасность и комфорт <br>наших жителей — <br>наш главный приоритет.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- end of main advantages -->
+			<!-- services -->
+			<section class="services" id="services">
+				<div class="container">
+					<h2 class="services__heading">широкий <br>Сервис</h2>
+					<div class="services__wrapper">
+						<div class="services-card services__item">
+							<div class="services-card__wrapper">
+								<span class="services-card__description">Круглосуточная охрана и видеонаблюдение</span>
+							</div>
+						</div>
+						<div class="services-card services__item">
+							<div class="services-card__wrapper">
+								<span class="services-card__description">Благоустроенные общественные <br>зоны</span>
+							</div>
+						</div>
+						<div class="services-card services__item">
+							<div class="services-card__wrapper">
+								<span class="services-card__title">Услуги <br>консьержа</span>
+							</div>
+						</div>
+						<div class="services-card services__item">
+							<div class="services-card__wrapper">
+								<span class="services-card__description">Управление зданием и&nbsp;техническое обслуживание</span>
+							</div>
+						</div>
+						<div class="services-card services__item">
+							<div class="services-card__wrapper">
+								<span class="services-card__description">Управление отходами и уборка территории</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end of services -->
+			<!-- services promo -->
+			<section class="services-promo" id="services-promo">
+				<div class="container">
+					<h2 class="services-promo__heading">ДОМ для <br>вашего <br>автомобиля</h2>
+					<div class="services-menu services-promo__menu">
+						<ul class="services-menu__list">
+							<li class="services-menu__item">
+								<a href="#" class="services-menu__btn">
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-wash"></use>
+									</svg>
+									<span>Автомойка</span>
+								</a>
+							</li>
+							<li class="services-menu__item">
+								<a href="#" class="services-menu__btn">
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-parking"></use>
+									</svg>
+									<span>Парковка</span>
+								</a>
+							</li>
+							<li class="services-menu__item">
+								<a href="#" class="services-menu__btn">
+									<svg>
+										<use xlink:href="img/sprite.svg#icon-charge"></use>
+									</svg>
+									<span>Зарядка</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<picture class="services-promo__bg">
+						<img src="img/services-details-01.jpg" alt="Image">
+					</picture>
+				</div>
+			</section>
+			<!-- end of services promo -->
 		</div>
 		<!-- end of content -->
+		<!-- footer -->
+		<footer class="footer" id="footer">
+			<div class="container">
+				<picture class="footer__logotype">
+					<img src="img/logotype-icon.svg" width="56" height="44" alt="МАЯК">
+				</picture>
+				<div class="footer__wrapper">
+					<div class="footer__info">
+						<a href="tel:+78124265971" class="footer__link">+7 812 426 59 71</a>
+						<a href="#" class="footer__link footer__link--accent">СВЯЗАТЬСЯ</a>
+					</div>
+					<picture class="footer__img">
+						<img src="img/mayak.svg" width="888" height="269" alt="МАЯК">
+					</picture>
+					<div class="footer__wrapper-inner">
+						<div class="footer__block">
+							<nav class="footer-nav footer__nav">
+								<ul class="footer-nav__list">
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Архитектура</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Благоустройство</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Безопасность</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Места общего пользования</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Выбор квартиры</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Инвестиции</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Ход строительства</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Партнёры</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="footer__block">
+							<div class="footer__group">
+								<span class="footer__label">Офис продаж и адрес:</span>
+								<address class="footer__value">г. Дербент, Жуков проезд, 8</address>
+							</div>
+							<div class="footer__group">
+								<span class="footer__label">Время работы:</span>
+								<span class="footer__value">пн-вс 10:00–20:00</span>
+							</div>
+							<div class="footer__group">
+								<span class="footer__label">Соц. сети:</span>
+								<span class="footer__value">Вконтакте</span>
+								<span class="footer__value">Телеграм</span>
+								<span class="footer__value">Инстаграм</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="#" class="footer__declaration">
+					<svg>
+						<use xlink:href="img/sprite.svg#icon-file"></use>
+					</svg>
+					<span>Проектная декларация</span>
+				</a>
+				<button class="footer__to-top" aria-label="Наверх">
+					<svg>
+						<use xlink:href="img/sprite.svg#icon-arrow-top"></use>
+					</svg>
+				</button>
+			</div>
+		</footer>
+		<!-- end of footer -->
 	</div>
 	<!-- end of wrapper -->
+	<!-- menu -->
+	<div class="menu" id="menu">
+		<div class="container">
+			<div class="menu__wrap">
+				<nav class="menu__nav">
+					<ul class="menu__list">
+						<li class="menu__item">
+							<a href="#" class="menu__link" data-img="img/menu-link-img-01.jpg">Архитектура</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link" data-img="img/menu-link-img-01.jpg">Благоустройство</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link" data-img="img/menu-link-img-01.jpg">Выбор квартиры</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link" data-img="img/menu-link-img-01.jpg">Безопасность</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link" data-img="img/menu-link-img-01.jpg">Ход строительства</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link" data-img="img/menu-link-img-01.jpg">Инвестиции</a>
+						</li>
+						<li class="menu__item">
+							<a href="#" class="menu__link" data-img="img/menu-link-img-01.jpg">Места общего пользования</a>
+						</li>
+						<li class="menu__item">
+							<a href="partners.html" class="menu__link" data-img="img/menu-link-img-01.jpg">Партнёры</a>
+						</li>
+						<li class="menu__item">
+							<a href="contacts.html" class="menu__link" data-img="img/menu-link-img-01.jpg">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+				<picture class="menu__img">
+					<img src="#" alt="Image">
+				</picture>
+				<a href="#" class="menu__declaration">
+					<svg>
+						<use xlink:href="img/sprite.svg#icon-file"></use>
+					</svg>
+					<span>Проектная декларация</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!-- end of menu -->
 	<!-- scripts -->
 	<script src="js/vendor.min.js"></script>
 	<script src="js/app.min.js"></script>
@@ -182,6 +611,32 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 </script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.promo-details__item').forEach((block, i) => {
+        gsap.fromTo(block, 
+            { opacity: 0, scale: 0.8 },  // Исходное состояние: непрозрачно, уменьшено
+            { 
+            opacity: 1, scale: 1,  // Финальное состояние: 100% видимость и размер
+            duration: 1, 
+            ease: 'power2.inOut', 
+            scrollTrigger: {
+                trigger: block,
+                start: "top top",  // Анимация начинается, когда верх блока касается верха экрана
+                end: "+=100%",  // Анимация продолжается, пока не прокрутим весь экран вниз
+                toggleActions: "play reverse play reverse",  // Анимация при входе/выходе
+                scrub: true,  // Привязка к скроллу
+                pin: true,  // Закрепляем блок на экране
+                pinSpacing: false,  // Без лишних отступов
+            }
+            }
+        );
+        });
+    </script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
