@@ -5,11 +5,11 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>ЖК МАЯК - 404</title>
-	<meta property="og:title" content="ЖК МАЯК - 404">
+	<title>ЖК МАЯК - Инженерия</title>
+	<meta property="og:title" content="ЖК МАЯК - Инженерия">
 	<meta property="og:description" content="Описание">
 	<meta property="og:url" content="/">
-	<meta property="og:site_name" content="ЖК МАЯК - 404">
+	<meta property="og:site_name" content="ЖК МАЯК - Инженерия">
 	<!-- favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
 
-<body class="bg-waves">
+<body>
 	<!-- wrapper -->
 	<div class="wrapper">
 		<!-- header -->
@@ -41,38 +41,119 @@
 							<span class="hamburger__inner"></span>
 						</button>
 					</div>
-					<a href="index.html" class="header__back">
-						<svg>
-							<use xlink:href="img/sprite.svg#icon-arrow-top-left"></use>
-						</svg>
-						<span>Вернуться на главную</span>
-					</a>
 				</div>
 			</div>
 		</header>
 		<!-- end of header -->
 		<!-- content -->
 		<div class="wrapper__content">
-			<!-- message -->
-			<section class="message" id="message">
+			<!-- main inner -->
+			<section class="main-inner" id="main-inner">
 				<div class="container">
-					<div class="message__wrap">
-						<div class="message__body">
-							<h1 class="message__heading">Спасибо за вашу заявку!</h1>
-							<p class="message__description">Ваш запрос на бронирование квартиры успешно отправлен. Мы свяжемся с вами в ближайшее время, чтобы подтвердить детали и ответить на все ваши вопросы.</p>
-						</div>
-						<a href="index.html" class="message__back">
-							<svg>
-								<use xlink:href="img/sprite.svg#icon-arrow-top-left"></use>
-							</svg>
-							<span>Вернуться на главную</span>
-						</a>
+					<div class="main-inner__wrap">
+						<h1 class="main-inner__heading">Инженерия</h1>
 					</div>
+					<div class="main-inner__block">
+						<p class="main-inner__description">Эффективные решения <br>и надежная безопасность — это наш стандарт</p>
+					</div>
+					<a href="#promo-quote" class="main-inner__bottom">
+						<svg>
+							<use xlink:href="img/sprite.svg#icon-arrow-bottom"></use>
+						</svg>
+					</a>
+					<picture class="main-inner__bg">
+						<img src="img/mops-bg.jpg" alt="Image">
+					</picture>
 				</div>
 			</section>
-			<!-- end of message -->
+			<!-- end of main inner -->
+			<!-- promo -->
+			<section class="promo-quote" id="promo-quote">
+				<div class="container"></div>
+			</section>
+			<!-- end of promo -->
 		</div>
 		<!-- end of content -->
+		<!-- footer -->
+		<footer class="footer" id="footer">
+			<div class="container">
+				<picture class="footer__logotype">
+					<img src="img/logotype-icon.svg" width="56" height="44" alt="МАЯК">
+				</picture>
+				<div class="footer__wrapper">
+					<div class="footer__info">
+						<a href="tel:+78124265971" class="footer__link">+7 812 426 59 71</a>
+						<a href="#" class="footer__link footer__link--accent">СВЯЗАТЬСЯ</a>
+					</div>
+					<picture class="footer__img">
+						<img src="img/mayak.svg" width="888" height="269" alt="МАЯК">
+					</picture>
+					<div class="footer__wrapper-inner">
+						<div class="footer__block">
+							<nav class="footer-nav footer__nav">
+								<ul class="footer-nav__list">
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Архитектура</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Благоустройство</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Безопасность</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Места общего пользования</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Выбор квартиры</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Инвестиции</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Ход строительства</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Партнёры</a>
+									</li>
+									<li class="footer-nav__item">
+										<a href="#" class="footer-nav__link">Контакты</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div class="footer__block">
+							<div class="footer__group">
+								<span class="footer__label">Офис продаж и адрес:</span>
+								<address class="footer__value">г. Дербент, Жуков проезд, 8</address>
+							</div>
+							<div class="footer__group">
+								<span class="footer__label">Время работы:</span>
+								<span class="footer__value">пн-вс 10:00–20:00</span>
+							</div>
+							<div class="footer__group">
+								<span class="footer__label">Соц. сети:</span>
+								<span class="footer__value">Вконтакте</span>
+								<span class="footer__value">Телеграм</span>
+								<span class="footer__value">Инстаграм</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a href="#" class="footer__declaration">
+					<svg>
+						<use xlink:href="img/sprite.svg#icon-file"></use>
+					</svg>
+					<span>Проектная декларация</span>
+				</a>
+				<button class="footer__to-top" aria-label="Наверх">
+					<svg>
+						<use xlink:href="img/sprite.svg#icon-arrow-top"></use>
+					</svg>
+				</button>
+			</div>
+		</footer>
+		<!-- end of footer -->
 	</div>
 	<!-- end of wrapper -->
 	<!-- menu -->
