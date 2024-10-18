@@ -56,8 +56,8 @@
 		<div class="wrapper__content">
 			<!-- main -->
 			<section class="main" id="main">
-				<div class="main__bg">
-					<img src="img/main-bg.png" alt="Image">
+				<div class="main__bg" id="lottie">
+					<!-- <img src="img/main-bg.png" alt="Image"> -->
 				</div>
 			</section>
 			<!-- end of main -->
@@ -71,6 +71,13 @@
 				</div>
 			</section>
 			<!-- end of promo -->
+			<!-- nav map -->
+			<div class="nav-map" id="nav-map">
+				<div class="container">
+					<div class="nav-map__wrap"></div>
+				</div>
+			</div>
+			<!-- end of nav map -->
 			<!-- gallery -->
 			<div class="gallery" id="gallery">
 				<div class="gallery__slider">
@@ -658,7 +665,7 @@
 				renderer: 'svg', // или 'canvas', если используется другой рендерер
 				loop: true, // отключаем бесконечный цикл для основной анимации
 				autoplay: true, // выключаем автоматическое воспроизведение
-				path: 'HeaderAnimatedEndless4k.json' // путь к JSON файлу анимации
+				path: 'Ani.json' // путь к JSON файлу анимации
 			});
 
 			// firstAnimation.addEventListener('complete', function() {
@@ -701,7 +708,7 @@
             renderer: 'canvas',
             loop: true,
             autoplay: true,
-            path: 'main.json' // Путь к вашему JSON файлу с анимацией
+            path: 'HeaderAnimated.json' // Путь к вашему JSON файлу с анимацией
         });
     
         // Использование Canvas как маски
@@ -715,7 +722,7 @@
         }
     
         updateMask();
-    </script>     -->
+    </script> -->
 </body>
 
 </html>

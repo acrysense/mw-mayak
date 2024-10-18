@@ -2278,6 +2278,7 @@ svg {
 }
 
 .main {
+  overflow: hidden;
   margin-top: -19.375vw;
   padding-top: 19.375vw;
   background: #FFFFFF;
@@ -2297,12 +2298,12 @@ svg {
 .main__bg {
   position: relative;
   z-index: 1;
-  width: 100%;
+  width: 100vw;
 }
 .main__bg::before {
   content: "";
   display: block;
-  padding-top: 49.306%;
+  padding-top: 68.4115%;
 }
 .main__bg > * {
   position: absolute;
@@ -2422,7 +2423,6 @@ svg {
   border-radius: 0;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-  cursor: none;
 }
 .gallery__slider .swiper-button-next:focus,
 .gallery__slider .swiper-button-prev:focus {
