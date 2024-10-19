@@ -2230,37 +2230,26 @@ svg {
 }
 
 .bg-waves {
-  background: #FFFFFF;
-}
-.bg-waves::before {
-  content: "";
   position: absolute;
-  top: -7.0833333333vw;
+  top: 0;
   right: 0;
   z-index: -1;
   display: block;
-  width: 100%;
-  height: 42.8472222222vw;
-  background-image: url(../img/bg-inner.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
+  width: 100vw;
 }
-@media screen and (min-width: 744px) and (max-width: 1023px) {
-  .bg-waves::before {
-    top: -12.4700239808vw;
-    width: 172.6618705036vw;
-    height: 76.9784172662vw;
-  }
+.bg-waves::before {
+  content: "";
+  display: block;
+  padding-top: 68.4115%;
 }
-@media screen and (max-width: 743px) {
-  .bg-waves::before {
-    top: -15.1282051282vw;
-    width: 172.5641025641vw;
-    height: 76.9230769231vw;
-  }
+.bg-waves > * {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
 }
-
 .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
