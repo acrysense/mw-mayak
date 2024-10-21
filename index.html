@@ -56,8 +56,7 @@
 		<div class="wrapper__content">
 			<!-- main -->
 			<section class="main" id="main">
-				<div class="main__bg" id="lottie">
-					<!-- <img src="img/main-bg.png" alt="Image"> -->
+				<div class="main__bg" id="main-waves">
 				</div>
 			</section>
 			<!-- end of main -->
@@ -655,73 +654,6 @@
             }
         );
         });
-    </script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js"></script>
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			console.log(window.innerHeight)
-			var firstAnimation = lottie.loadAnimation({
-				container: document.getElementById('lottie'), // контейнер для анимации
-				renderer: 'svg', // или 'canvas', если используется другой рендерер
-				loop: true, // отключаем бесконечный цикл для основной анимации
-				autoplay: true, // выключаем автоматическое воспроизведение
-				path: 'Main.json' // путь к JSON файлу анимации
-			});
-
-			// firstAnimation.addEventListener('complete', function() {
-			//     var container = document.getElementById('lottie')
-			//     container.innerHTML = ''
-
-			//     var secondAnimation = lottie.loadAnimation({
-			//         container: container, // контейнер для анимации
-			//         renderer: 'svg', // или 'canvas', если используется другой рендерер
-			//         loop: true, // отключаем бесконечный цикл для основной анимации
-			//         autoplay: true, // выключаем автоматическое воспроизведение
-			//         path: 'HeaderAnimatedEndless.json' // путь к JSON файлу анимации
-			//     });
-			// })
-		})
-
-		// // Первый сегмент: вылет линий
-		// var firstSegment = [0, 50]; // замените на реальные кадры для первой части
-		// // Второй сегмент: качание линий
-		// var secondSegment = [51, 100]; // замените на реальные кадры для второй части
-
-		// // Воспроизводим первую часть анимации
-		// animation.playSegments(firstSegment, true);
-
-		// // Когда анимация первой части завершена, начинаем повторение второй части
-		// animation.addEventListener('complete', function() {
-		//     animation.playSegments(secondSegment, true); // true - зацикливание
-		// });
-	</script>
-	<!-- <script>
-        // Инициализация Canvas и контекста
-        const canvas = document.getElementById('lottieCanvas');
-        const context = canvas.getContext('2d');
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-    
-        // Подготовка Lottie анимации
-        lottie.loadAnimation({
-            container: canvas, // Canvas для рендеринга
-            renderer: 'canvas',
-            loop: true,
-            autoplay: true,
-            path: 'HeaderAnimated.json' // Путь к вашему JSON файлу с анимацией
-        });
-    
-        // Использование Canvas как маски
-        const image = document.getElementById('maskedImage');
-    
-        function updateMask() {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            context.drawImage(canvas, 0, 0, canvas.width, canvas.height);
-            image.style.clipPath = `url(${canvas.toDataURL()})`;
-            requestAnimationFrame(updateMask);
-        }
-    
-        updateMask();
     </script> -->
 </body>
 
