@@ -6763,6 +6763,7 @@ svg {
 }
 .gantt__diagram {
   display: block;
+  margin-right: calc(50% - 50vw);
   height: calc(100dvh - 6.1805555556vw - 2.0138888889vw - 2.7777777778vw - 2.0833333333vw);
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
@@ -6909,11 +6910,17 @@ svg {
 .gantt__diagram .gantt_task_line {
   border-bottom: 4px solid #EEEEEE !important;
 }
+.gantt__diagram .gantt_task_line.gantt_selected {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+.gantt__diagram .gantt_task_line.gantt_bar_task.gantt_dependent_task .gantt_task_content {
+  pointer-events: none !important;
+}
 .gantt__diagram .gantt_task_line.gantt_bar_task.gantt_dependent_task .gantt_task_content a {
   font-weight: 500 !important;
   color: rgba(0, 0, 0, 0.4) !important;
   background: #EEEEEE !important;
-  pointer-events: none !important;
 }
 .gantt__diagram .gantt_task_line.gantt_bar_task.gantt_dependent_task .gantt_task_content a:hover {
   color: #FFFFFF !important;
