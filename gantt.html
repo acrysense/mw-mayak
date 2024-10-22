@@ -378,9 +378,11 @@
 
 			gantt.attachEvent("onTaskClick", function(id, e) {
 				var task = gantt.getTask(id);
+
 				if (task.link) {
 					window.open(task.link, "_blank");
 				}
+
 				return true;
 			});
 
