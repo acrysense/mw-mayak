@@ -50,92 +50,15 @@
 			<!-- gantt -->
 			<section class="gantt" id="gantt">
 				<div class="container">
+					<div class="gantt__top">
+						<h2 class="gantt__heading">Ход строительства</h2>
+					</div>
 					<div class="gantt__diagram" id="gantt_here"></div>
 				</div>
 			</section>
 			<!-- end of gantt -->
 		</div>
 		<!-- end of content -->
-		<!-- footer -->
-		<footer class="footer" id="footer">
-			<div class="container">
-				<picture class="footer__logotype">
-					<img src="img/logotype-icon.svg" width="56" height="44" alt="МАЯК">
-				</picture>
-				<div class="footer__wrapper">
-					<div class="footer__info">
-						<a href="tel:+78124265971" class="footer__link">+7 812 426 59 71</a>
-						<a href="#" class="footer__link footer__link--accent">СВЯЗАТЬСЯ</a>
-					</div>
-					<picture class="footer__img">
-						<img src="img/mayak.svg" width="888" height="269" alt="МАЯК">
-					</picture>
-					<div class="footer__wrapper-inner">
-						<div class="footer__block">
-							<nav class="footer-nav footer__nav">
-								<ul class="footer-nav__list">
-									<li class="footer-nav__item">
-										<a href="#" class="footer-nav__link">Архитектура</a>
-									</li>
-									<li class="footer-nav__item">
-										<a href="#" class="footer-nav__link">Благоустройство</a>
-									</li>
-									<li class="footer-nav__item">
-										<a href="#" class="footer-nav__link">Безопасность</a>
-									</li>
-									<li class="footer-nav__item">
-										<a href="#" class="footer-nav__link">Места общего пользования</a>
-									</li>
-									<li class="footer-nav__item">
-										<a href="#" class="footer-nav__link">Выбор квартиры</a>
-									</li>
-									<li class="footer-nav__item">
-										<a href="#" class="footer-nav__link">Инвестиции</a>
-									</li>
-									<li class="footer-nav__item">
-										<a href="#" class="footer-nav__link">Ход строительства</a>
-									</li>
-									<li class="footer-nav__item">
-										<a href="#" class="footer-nav__link">Партнёры</a>
-									</li>
-									<li class="footer-nav__item">
-										<a href="#" class="footer-nav__link">Контакты</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-						<div class="footer__block">
-							<div class="footer__group">
-								<span class="footer__label">Офис продаж и адрес:</span>
-								<address class="footer__value">г. Дербент, Жуков проезд, 8</address>
-							</div>
-							<div class="footer__group">
-								<span class="footer__label">Время работы:</span>
-								<span class="footer__value">пн-вс 10:00–20:00</span>
-							</div>
-							<div class="footer__group">
-								<span class="footer__label">Соц. сети:</span>
-								<a href="#" class="footer__value">Вконтакте</a>
-								<a href="#" class="footer__value">Телеграм</a>
-								<a href="#" class="footer__value">Инстаграм</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<a href="#" class="footer__declaration">
-					<svg>
-						<use xlink:href="img/sprite.svg#icon-file"></use>
-					</svg>
-					<span>Проектная декларация</span>
-				</a>
-				<button class="footer__to-top" aria-label="Наверх">
-					<svg>
-						<use xlink:href="img/sprite.svg#icon-arrow-top"></use>
-					</svg>
-				</button>
-			</div>
-		</footer>
-		<!-- end of footer -->
 	</div>
 	<!-- end of wrapper -->
 	<!-- menu -->
@@ -339,283 +262,106 @@
 	<script src="https://cdn.dhtmlx.com/gantt/edge/dhtmlxgantt.js"></script>
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
-			// gantt.config.scale_unit = "year";  // Основная шкала — год
-			// gantt.config.date_scale = "%Y";
+			if (!gantt.locale) gantt.locale = {};
+			if (!gantt.locale.labels) gantt.locale.labels = {};
 
-			// gantt.config.subscales = [
-			//     {unit: "month", step: 1, date: "%F"} // Месяцы
-			// ];
-			gantt.config.scale_unit = "month"; // Шкала по месяцам
-			gantt.config.date_scale = "%F, %Y"; // Формат отображения: Месяц, Год
-			// Убираем подшкалу с днями
-			gantt.config.subscales = [];
+			gantt.locale.date = {
+				month_full: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+				month_short: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"]
+			};
 
-			gantt.config.smart_rendering = true;
+			gantt.config.scale_unit = "month";
+			gantt.config.date_scale = "%M";
 
-			gantt.config.grid_width = 300; // Ширина колонки для задач
+			gantt.config.subscales = [{
+				unit: "year",
+				step: 1,
+				date: "%Y"
+			}];
+
+			gantt.config.grid_width = 0;
 			gantt.config.root_id = 0;
 
-			gantt.config.show_links = false; // Отключаем стрелки зависимостей
-			gantt.config.drag_links = false; // Отключаем перетаскивание для создания связей
+			gantt.config.row_height = 39;
+			gantt.config.task_height = 39;
+
+			gantt.config.show_links = false;
+			gantt.config.drag_links = false;
 
 			gantt.config.drag_resize = false;
 			gantt.config.drag_move = false;
 			gantt.config.drag_progress = false;
 			gantt.config.show_grid = true;
 
-			gantt.config.columns = [{
-					name: "text",
-					label: "Задача",
-					width: "*",
-					tree: true
-				}, // Оставляем только колонку с именем задачи
-			];
-
 			gantt.config.show_task_cells = false;
-
-			// Добавляем вертикальные линии
-			gantt.templates.scale_cell_class = function(date) {
-				return "vertical-line"; // Добавляем класс для каждой ячейки с месяцем
-			};
-
-			// Добавляем вертикальные линии для области задач
-			gantt.templates.task_cell_class = function(task, date) {
-				return "vertical-line"; // Добавляем класс для вертикальных линий на задачных ячейках
-			};
+			gantt.config.hide_empty_rows = true;
 
 			var tasks = {
 				data: [{
 						id: 1,
-						text: "Раздел 1",
-						start_date: "23-09-2023",
-						duration: 30,
-						progress: 0.5,
+						text: "Подготовка площадки",
 						open: true
-					}, // Главная задача (раздел)
+					},
 					{
 						id: 2,
-						text: "Подзадача 1",
-						start_date: "23-09-2023",
-						duration: 14,
-						progress: 0.9,
+						text: "Расчистка территории",
+						start_date: "01-10-2023",
+						duration: 27,
 						parent: 1,
 						link: "/gantt-inner.html"
-					}, // Подзадача 1
+					},
 					{
 						id: 3,
-						text: "Подзадача 2",
-						start_date: "05-10-2023",
-						duration: 15,
-						progress: 0.3,
+						text: "Устройство временных дорог и ограждений",
+						start_date: "13-10-2023",
+						duration: 45,
 						parent: 1,
 						link: "/gantt-inner.html"
-					}, // Подзадача 2
+					},
 					{
 						id: 4,
-						text: "Подзадача 3",
+						text: "Подключение временных коммуникаций",
 						start_date: "26-10-2023",
-						duration: 5,
-						progress: 0.8,
+						duration: 55,
 						parent: 1,
 						link: "/gantt-inner.html"
-					}, // Подзадача 3
+					},
 
 					{
 						id: 5,
-						text: "Раздел 2",
-						start_date: "01-11-2023",
-						duration: 20,
-						progress: 0.4,
+						text: "Земляные работы",
 						open: true
-					}, // Ещё одна главная задача
+					},
 					{
 						id: 6,
-						text: "Подзадача 1",
-						start_date: "01-11-2023",
-						duration: 7,
-						progress: 0.2,
+						text: "Рытье котлована",
+						start_date: "05-11-2023",
+						duration: 32,
 						parent: 5,
 						link: "/gantt-inner.html"
-					}, // Подзадача для Раздела 2
+					},
 					{
 						id: 7,
-						text: "Подзадача 2",
-						start_date: "10-11-2023",
-						duration: 13,
-						progress: 0.7,
+						text: "Устройство дренажной системы",
+						start_date: "22-11-2023",
+						duration: 36,
 						parent: 5,
 						link: "/gantt-inner.html"
-					}, // Ещё одна подзадача
-					{
-						id: 8,
-						text: "Подзадача 1",
-						start_date: "01-11-2023",
-						duration: 7,
-						progress: 0.2,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Подзадача для Раздела 2
-					{
-						id: 9,
-						text: "Подзадача 2",
-						start_date: "10-11-2023",
-						duration: 13,
-						progress: 0.7,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Ещё одна подзадача
-					{
-						id: 10,
-						text: "Подзадача 1",
-						start_date: "01-11-2023",
-						duration: 7,
-						progress: 0.2,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Подзадача для Раздела 2
-					{
-						id: 11,
-						text: "Подзадача 2",
-						start_date: "10-11-2023",
-						duration: 13,
-						progress: 0.7,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Ещё одна подзадача
-					{
-						id: 12,
-						text: "Подзадача 1",
-						start_date: "01-11-2023",
-						duration: 7,
-						progress: 0.2,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Подзадача для Раздела 2
-					{
-						id: 13,
-						text: "Подзадача 2",
-						start_date: "10-11-2023",
-						duration: 13,
-						progress: 0.7,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Ещё одна подзадача
-					{
-						id: 14,
-						text: "Подзадача 1",
-						start_date: "01-11-2023",
-						duration: 7,
-						progress: 0.2,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Подзадача для Раздела 2
-					{
-						id: 15,
-						text: "Подзадача 2",
-						start_date: "10-11-2023",
-						duration: 13,
-						progress: 0.7,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Ещё одна подзадача
-					{
-						id: 16,
-						text: "Подзадача 1",
-						start_date: "01-11-2023",
-						duration: 7,
-						progress: 0.2,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Подзадача для Раздела 2
-					{
-						id: 17,
-						text: "Подзадача 2",
-						start_date: "10-11-2023",
-						duration: 13,
-						progress: 0.7,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Ещё одна подзадача
-					{
-						id: 18,
-						text: "Подзадача 1",
-						start_date: "01-11-2023",
-						duration: 7,
-						progress: 0.2,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Подзадача для Раздела 2
-					{
-						id: 19,
-						text: "Подзадача 2",
-						start_date: "10-11-2023",
-						duration: 13,
-						progress: 0.7,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Ещё одна подзадача
-					{
-						id: 20,
-						text: "Подзадача 1",
-						start_date: "01-11-2023",
-						duration: 7,
-						progress: 0.2,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Подзадача для Раздела 2
-					{
-						id: 21,
-						text: "Подзадача 2",
-						start_date: "10-11-2023",
-						duration: 13,
-						progress: 0.7,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Ещё одна подзадача
-					{
-						id: 22,
-						text: "Подзадача 1",
-						start_date: "01-11-2023",
-						duration: 7,
-						progress: 0.2,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Подзадача для Раздела 2
-					{
-						id: 23,
-						text: "Подзадача 2",
-						start_date: "10-11-2023",
-						duration: 120,
-						progress: 0.9,
-						parent: 5,
-						link: "/gantt-inner.html"
-					}, // Ещё одна подзадача
+					},
 				],
-				links: [{
-						id: 1,
-						source: 2,
-						target: 3,
-						type: "0"
-					}, // Связь между подзадачами в разделе 1
-					{
-						id: 2,
-						source: 6,
-						target: 7,
-						type: "0"
-					} // Связь между подзадачами в разделе 2
-				]
+				links: []
 			};
 
-			// Добавляем кликабельность плашек на диаграмме
+			gantt.config.min_column_width = 240;
+
 			gantt.attachEvent("onTaskClick", function(id, e) {
-				var task = gantt.getTask(id); // Получаем задачу по её ID
-				if (task.link) { // Если есть ссылка, то перенаправляем
-					window.open(task.link, "_blank"); // Открываем ссылку в новой вкладке
+				var task = gantt.getTask(id);
+				if (task.link) {
+					window.open(task.link, "_blank");
 				}
 				return true;
 			});
 
-			// Стилизация плашек (делаем их выглядящими как ссылки)
 			gantt.templates.task_text = function(start, end, task) {
 				return "<a href='" + task.link + "' target='_blank' style='color: #000; text-decoration: underline;'>" + task.text + "</a>";
 			};
