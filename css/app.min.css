@@ -1025,7 +1025,7 @@ svg {
 }
 
 .scroll-disabled,
-.locked {
+.lock-scroll {
   overflow: hidden;
 }
 
@@ -1392,6 +1392,7 @@ svg {
   z-index: 1;
   display: block;
   overflow: hidden;
+  padding-bottom: 0.1388888889vw;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -1650,6 +1651,7 @@ svg {
 .footer {
   position: relative;
   z-index: 1;
+  margin-top: -2.3611111111vw;
   padding: 3.8888888889vw 0;
   background: rgba(255, 255, 255, 0.5);
   -webkit-backdrop-filter: blur(20px);
@@ -1662,11 +1664,13 @@ svg {
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .footer {
+    margin-top: -4.0767386091vw;
     padding: 5.3956834532vw 0 6.7146282974vw;
   }
 }
 @media screen and (max-width: 743px) {
   .footer {
+    margin-top: -8.7179487179vw;
     padding: 11.5384615385vw 0 10.5128205128vw;
     background: rgba(255, 255, 255, 0.5);
   }
@@ -1790,7 +1794,10 @@ svg {
   }
 }
 .footer__value {
+  position: relative;
+  z-index: 1;
   display: block;
+  overflow: hidden;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -1798,9 +1805,33 @@ svg {
   font-weight: normal;
   letter-spacing: -0.02em;
 }
+.footer__value::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  display: block;
+  width: 100%;
+  height: 0.0694444444vw;
+  background: #000000;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  transition: -webkit-transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+.footer__value:hover {
+  color: #000000;
+}
 @media screen and (hover: hover) {
-  .footer__value[href]:hover {
-    color: #BCAC9B;
+  .footer__value[href]:hover::before {
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
@@ -1850,7 +1881,7 @@ svg {
   display: block;
   overflow: hidden;
   margin: 0 auto;
-  padding-bottom: 1px;
+  padding-bottom: 0.0694444444vw;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -2114,7 +2145,10 @@ svg {
   }
 }
 .footer-nav__link {
+  position: relative;
+  z-index: 1;
   display: block;
+  overflow: hidden;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -2122,9 +2156,33 @@ svg {
   font-weight: normal;
   letter-spacing: -0.02em;
 }
+.footer-nav__link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  -webkit-transform: translate(-100%, 0);
+      -ms-transform: translate(-100%, 0);
+          transform: translate(-100%, 0);
+  display: block;
+  width: 100%;
+  height: 0.0694444444vw;
+  background: #000000;
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  transition: -webkit-transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  transition: transform 0.4s cubic-bezier(0.42, 0, 0.58, 1), -webkit-transform 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
+.footer-nav__link:hover {
+  color: #000000;
+}
 @media screen and (hover: hover) {
-  .footer-nav__link:hover {
-    color: #BCAC9B;
+  .footer-nav__link:hover::before {
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
   }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
@@ -2416,7 +2474,7 @@ svg {
 
 .main {
   overflow: hidden;
-  margin-top: -19.375vw;
+  margin-top: -19.5138888889vw;
   background: #FFFFFF;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
@@ -2715,19 +2773,19 @@ svg {
   }
 }
 .promo-details__top {
-  margin: 0 auto 2.6388888889vw;
-  max-width: 28.4027777778vw;
+  margin: 0 auto 4.6527777778vw;
+  max-width: 26.3888888889vw;
   width: 100%;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .promo-details__top {
-    margin-bottom: 4.5563549161vw;
-    max-width: 49.0407673861vw;
+    margin-bottom: 8.0335731415vw;
+    max-width: 45.5635491607vw;
   }
 }
 @media screen and (max-width: 743px) {
   .promo-details__top {
-    margin-bottom: 7.9487179487vw;
+    margin-bottom: 17.1794871795vw;
     max-width: 73.0769230769vw;
   }
 }
@@ -2784,6 +2842,42 @@ svg {
     margin-top: 7.9487179487vw;
     max-width: 70.2564102564vw;
     font-size: 4.6153846154vw;
+  }
+}
+.promo-details__img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  overflow: hidden;
+  margin-top: 2.6388888889vw;
+  width: 100%;
+}
+.promo-details__img::before {
+  content: "";
+  display: block;
+  padding-top: 105.5265%;
+}
+.promo-details__img img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .promo-details__img {
+    margin-top: 4.5563549161vw;
+  }
+}
+@media screen and (max-width: 743px) {
+  .promo-details__img {
+    margin-top: 7.9487179487vw;
   }
 }
 .promo-details__wrapper {
@@ -2932,6 +3026,12 @@ svg {
   height: 100%;
   background: rgba(0, 0, 0, 0.15);
   pointer-events: none;
+}
+.promo-details-card.expanded {
+  height: 80svh;
+}
+.promo-details-card.expanded .promo-details-card__description {
+  opacity: 1;
 }
 .promo-details-card__title {
   display: block;
@@ -3372,8 +3472,18 @@ svg {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  height: 100svh;
+  height: 62.5vw;
   color: #FFFFFF;
+}
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .about-promo {
+    height: 107.9136690647vw;
+  }
+}
+@media screen and (max-width: 743px) {
+  .about-promo {
+    height: 216.4102564103vw;
+  }
 }
 .about-promo__heading {
   position: absolute;
@@ -4383,18 +4493,17 @@ svg {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  min-height: 55.5555555556vw;
-  height: 100svh;
+  height: 62.5vw;
   color: #FFFFFF;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .services-promo {
-    min-height: 95.9232613909vw;
+    height: 107.9136690647vw;
   }
 }
 @media screen and (max-width: 743px) {
   .services-promo {
-    min-height: 205.1282051282vw;
+    height: 216.4102564103vw;
   }
 }
 .services-promo__heading {
@@ -4506,6 +4615,10 @@ svg {
       -ms-flex-pack: center;
           justify-content: center;
   padding: 0.9722222222vw 2.2222222222vw;
+  min-width: 240px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   font-size: 1.6666666667vw;
   font-weight: normal;
   letter-spacing: -0.02em;
@@ -4529,11 +4642,6 @@ svg {
 }
 .services-menu__btn:focus {
   outline: none;
-}
-@media screen and (hover: hover) {
-  .services-menu__btn[href]:hover {
-    background: rgba(255, 255, 255, 0.9);
-  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .services-menu__btn {

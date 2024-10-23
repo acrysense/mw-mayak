@@ -113,6 +113,9 @@
 							ВНИМАНИЯ
 						</h2>
 						<p class="promo-details__description animate">Во дворе все продумано, чтобы вы могли чувствовать себя как на природе: здесь найдутся убаюкивающие гамаки, тенистые перголы и дорожки для неспешных прогулок.</p>
+						<picture class="promo-details__img animate">
+							<img src="img/promo-details-main.jpg" alt="Image">
+						</picture>
 					</div>
 					<div class="promo-details__wrapper">
 						<div class="promo-details-card promo-details__item" style="background-image: url(img/promo-details-01.jpg);">
@@ -321,28 +324,28 @@
 					<div class="services-menu services-promo__menu">
 						<ul class="services-menu__list">
 							<li class="services-menu__item">
-								<a href="#" class="services-menu__btn">
+								<span class="services-menu__btn">
 									<svg>
 										<use xlink:href="img/sprite.svg#icon-wash"></use>
 									</svg>
 									<span>Автомойка</span>
-								</a>
+								</span>
 							</li>
 							<li class="services-menu__item">
-								<a href="#" class="services-menu__btn">
+								<span class="services-menu__btn">
 									<svg>
 										<use xlink:href="img/sprite.svg#icon-parking"></use>
 									</svg>
 									<span>Парковка</span>
-								</a>
+								</span>
 							</li>
 							<li class="services-menu__item">
-								<a href="#" class="services-menu__btn">
+								<span class="services-menu__btn">
 									<svg>
 										<use xlink:href="img/sprite.svg#icon-charge"></use>
 									</svg>
 									<span>Зарядка</span>
-								</a>
+								</span>
 							</li>
 						</ul>
 					</div>
@@ -637,39 +640,83 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 	<script>
-		const approachItems = document.querySelectorAll('.promo-details__item');
+		let isAnimating = false;
+		let currentBlockIndex = 0;
 
-		// Функция для изменения высоты
-		const handleScroll = () => {
-			const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-			const viewportCenter = viewportHeight / 2;
+		document.addEventListener('scroll', handleScroll);
 
-			approachItems.forEach(item => {
-				const rect = item.getBoundingClientRect();
-				const itemCenter = rect.top + rect.height / 2;
+		function handleScroll() {
+			if (isAnimating) return;
 
-				const distanceFromCenter = Math.abs(viewportCenter - itemCenter);
-				const maxDistance = viewportHeight / 2;
+			const blocks = document.querySelectorAll('.promo-details__item');
 
-				// Рассчитываем коэффициент, на основе которого будем изменять высоту
-				const adjustedRatio = Math.max(0, 1 - distanceFromCenter / maxDistance);
+			const currentBlock = blocks[currentBlockIndex];
+			const blockTop = currentBlock.getBoundingClientRect().top;
 
-				// Минимальная высота (164px), максимальная высота (100svh)
-				const minHeight = 164; // в пикселях
-				const maxHeight = viewportHeight * 0.8;; // 100svh по сути это 100% высоты окна
+			if (blockTop <= 12 && !currentBlock.classList.contains('expanded')) {
+				isAnimating = true;
 
-				// Рассчитываем высоту на основе коэффициента
-				const newHeight = minHeight + (maxHeight - minHeight) * adjustedRatio;
+				bodyFixScroll(true);
 
-				// Применяем новую высоту к элементу
-				item.style.height = `${newHeight}px`;
-			});
-		};
+				currentBlock.scrollIntoView({
+					behavior: 'smooth',
+					block: 'start'
+				});
+				window.scrollBy(0, -12);
 
-		// Привязываем обработчик скролла и ресайза
-		window.addEventListener('scroll', handleScroll);
-		window.addEventListener('resize', handleScroll);
-		handleScroll();
+				expandBlock(currentBlock);
+
+				setTimeout(() => {
+					bodyFixScroll(false);
+					currentBlockIndex++;
+					isAnimating = false;
+				}, 600);
+			}
+		}
+
+		function expandBlock(block) {
+			block.classList.add('expanded');
+		}
+
+		function bodyFixScroll(status) {
+			let scrollPosition = 0;
+			let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+			let elementsFixed = document.querySelectorAll('.fixed');
+
+			if (status) {
+				scrollPosition = window.pageYOffset;
+				document.body.style.overflow = 'hidden';
+				document.body.style.position = 'fixed';
+				document.body.style.top = `-${scrollPosition}px`;
+				document.body.style.width = '100%';
+				document.body.style.paddingRight = paddingOffset;
+
+				if (elementsFixed.length) {
+					elementsFixed.forEach(item => {
+						item.style.marginRight = paddingOffset;
+					});
+				}
+			} else {
+				scrollPosition = Math.abs(parseInt(document.body.style.top.replace('px', '')));
+
+				document.body.style.removeProperty('overflow');
+				document.body.style.removeProperty('position');
+				document.body.style.removeProperty('top');
+				document.body.style.removeProperty('width');
+				document.body.style.removeProperty('padding-right');
+
+				if (elementsFixed.length) {
+					elementsFixed.forEach(item => {
+						item.style.removeProperty('margin-right');
+					});
+				}
+
+				window.scrollTo({
+					top: scrollPosition,
+					behavior: 'instant'
+				});
+			}
+		}
 	</script>
 	<script>
 		gsap.registerPlugin(ScrollTrigger);
