@@ -99,6 +99,7 @@
 					<button class="swiper-button-next">
 						<span class="swiper-button-circle">Далее</span>
 					</button>
+					<span class="swiper-button-circle swiper-button-circle--hover"></span>
 				</div>
 			</div>
 			<!-- end of gallery -->
@@ -628,32 +629,9 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 </script> -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.utils.toArray('.promo-details__item').forEach((block, i) => {
-        gsap.fromTo(block, 
-            { opacity: 0, scale: 0.8 },  // Исходное состояние: непрозрачно, уменьшено
-            { 
-            opacity: 1, scale: 1,  // Финальное состояние: 100% видимость и размер
-            duration: 1, 
-            ease: 'power2.inOut', 
-            scrollTrigger: {
-                trigger: block,
-                start: "top top",  // Анимация начинается, когда верх блока касается верха экрана
-                end: "+=100%",  // Анимация продолжается, пока не прокрутим весь экран вниз
-                toggleActions: "play reverse play reverse",  // Анимация при входе/выходе
-                scrub: true,  // Привязка к скроллу
-                pin: true,  // Закрепляем блок на экране
-                pinSpacing: false,  // Без лишних отступов
-            }
-            }
-        );
-        });
-    </script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 </body>
 
 </html>
