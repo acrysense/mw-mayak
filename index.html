@@ -640,83 +640,39 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 	<script>
-		let isAnimating = false;
-		let currentBlockIndex = 0;
+		const approachItems = document.querySelectorAll('.promo-details__item');
 
-		document.addEventListener('scroll', handleScroll);
+		// Функция для изменения высоты
+		const handleScroll = () => {
+			const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+			const viewportCenter = viewportHeight / 2;
 
-		function handleScroll() {
-			if (isAnimating) return;
+			approachItems.forEach(item => {
+				const rect = item.getBoundingClientRect();
+				const itemCenter = rect.top + rect.height / 2;
 
-			const blocks = document.querySelectorAll('.promo-details__item');
+				// Проверяем, находится ли элемент по центру экрана
+				if (itemCenter > viewportCenter - (rect.height / 2) && itemCenter < viewportCenter + (rect.height / 2)) {
+					const targetHeight = viewportHeight * 0.8; // фиксированная высота 80% от высоты окна
+					item.style.height = `${targetHeight}px`; // устанавливаем высоту
 
-			const currentBlock = blocks[currentBlockIndex];
-			const blockTop = currentBlock.getBoundingClientRect().top;
-
-			if (blockTop <= 12 && !currentBlock.classList.contains('expanded')) {
-				isAnimating = true;
-
-				bodyFixScroll(true);
-
-				currentBlock.scrollIntoView({
-					behavior: 'smooth',
-					block: 'start'
-				});
-				window.scrollBy(0, -12);
-
-				expandBlock(currentBlock);
-
-				setTimeout(() => {
-					bodyFixScroll(false);
-					currentBlockIndex++;
-					isAnimating = false;
-				}, 600);
-			}
-		}
-
-		function expandBlock(block) {
-			block.classList.add('expanded');
-		}
-
-		function bodyFixScroll(status) {
-			let scrollPosition = 0;
-			let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
-			let elementsFixed = document.querySelectorAll('.fixed');
-
-			if (status) {
-				scrollPosition = window.pageYOffset;
-				document.body.style.overflow = 'hidden';
-				document.body.style.position = 'fixed';
-				document.body.style.top = `-${scrollPosition}px`;
-				document.body.style.width = '100%';
-				document.body.style.paddingRight = paddingOffset;
-
-				if (elementsFixed.length) {
-					elementsFixed.forEach(item => {
-						item.style.marginRight = paddingOffset;
-					});
+					// Добавляем класс, если его еще нет
+					if (!item.classList.contains('is--open')) {
+						item.classList.add('is--open');
+					}
+				} else {
+					// Убираем класс, если элемент не в центре
+					if (item.classList.contains('is--open')) {
+						item.classList.remove('is--open');
+					}
 				}
-			} else {
-				scrollPosition = Math.abs(parseInt(document.body.style.top.replace('px', '')));
+			});
+		};
 
-				document.body.style.removeProperty('overflow');
-				document.body.style.removeProperty('position');
-				document.body.style.removeProperty('top');
-				document.body.style.removeProperty('width');
-				document.body.style.removeProperty('padding-right');
-
-				if (elementsFixed.length) {
-					elementsFixed.forEach(item => {
-						item.style.removeProperty('margin-right');
-					});
-				}
-
-				window.scrollTo({
-					top: scrollPosition,
-					behavior: 'instant'
-				});
-			}
-		}
+		// Привязываем обработчик скролла и ресайза
+		window.addEventListener('scroll', handleScroll);
+		window.addEventListener('resize', handleScroll);
+		handleScroll();
 	</script>
 	<script>
 		gsap.registerPlugin(ScrollTrigger);
