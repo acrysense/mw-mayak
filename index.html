@@ -56,7 +56,10 @@
 		<div class="wrapper__content">
 			<!-- main -->
 			<section class="main" id="main">
-				<div class="main__bg" id="main-waves"></div>
+				<div class="main__bg">
+					<div id="main-first-animation"></div>
+					<div id="main-second-animation"></div>
+				</div>
 			</section>
 			<!-- end of main -->
 			<!-- promo -->
@@ -117,7 +120,7 @@
 							<img src="img/promo-details-main.jpg" alt="Image">
 						</picture>
 					</div>
-					<div class="promo-details__wrapper">
+					<div class="promo-details__wrapper animate">
 						<div class="promo-details-card promo-details__item" style="background-image: url(img/promo-details-01.jpg);">
 							<h3 class="promo-details-card__title">Детская</h3>
 							<p class="promo-details-card__description">Безопасные игровые зоны</p>
@@ -639,36 +642,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-	<script>
-		const approachItems = document.querySelectorAll('.promo-details__item');
-
-		const handleScroll = () => {
-			const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-			const viewportCenter = viewportHeight / 2;
-
-			approachItems.forEach(item => {
-				const rect = item.getBoundingClientRect();
-				const itemCenter = rect.top + rect.height / 2;
-
-				if (itemCenter > viewportCenter - (rect.height / 2) && itemCenter < viewportCenter + (rect.height / 2)) {
-					const targetHeight = viewportHeight * 0.8;
-					item.style.height = `${targetHeight}px`;
-
-					if (!item.classList.contains('is--open')) {
-						item.classList.add('is--open');
-					}
-				} else {
-					if (item.classList.contains('is--open')) {
-						item.classList.remove('is--open');
-					}
-				}
-			});
-		};
-
-		window.addEventListener('scroll', handleScroll);
-		window.addEventListener('resize', handleScroll);
-		handleScroll();
-	</script>
 	<script>
 		gsap.registerPlugin(ScrollTrigger);
 
