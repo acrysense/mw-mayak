@@ -73,9 +73,67 @@
 			</section>
 			<!-- end of promo -->
 			<!-- nav map -->
-			<div class="nav-map" id="nav-map">
+			<div class="nav-map animate" id="nav-map">
 				<div class="container">
-					<div class="nav-map__wrap"></div>
+					<div class="nav-map-tabs nav-map__tabs">
+						<ul class="nav-map-tabs__list">
+							<li class="nav-map-tabs__item is--active">
+								<button class="nav-map-tabs__tab">Район</button>
+							</li>
+							<li class="nav-map-tabs__item">
+								<button class="nav-map-tabs__tab">Город</button>
+							</li>
+						</ul>
+						<div class="nav-map-tabs__holder is--active">
+							<div class="nav-map__info">
+								<p class="nav-map__description">Отсутствуют старый фонд и частный сектор. Мастер-план включает три объекта: духовный центр, центр гостеприимства и пешеходный мост.</p>
+							</div>
+							<picture class="nav-map__compass">
+								<img src="img/icon-compass-district.svg" alt="Image">
+							</picture>
+							<!-- <div class="nav-map-details nav-map__details">
+                                <div class="nav-map-details__wrapper">
+                                    <span class="nav-map-details__address">ул. Содружества , 47</span>
+                                    <span class="nav-map-details__heading">ЖК МАЯК</span>
+                                    <span class="nav-map-details__value">
+                                        <span>Жилой комплеккс</span>
+                                    </span>
+                                </div>
+                            </div> -->
+							<div class="nav-map-quote nav-map__quote">
+								<div class="nav-map-quote__wrapper">
+									<picture class="nav-map-quote__img">
+										<img src="img/nav-map-quote-01.jpg" alt="Image">
+									</picture>
+									<div class="nav-map-quote__body">
+										<p class="nav-map-quote__description">Архитектурная уникальность <span>Маяка</span>, <br>по мнению нашего архитектора Али Шихмайсурова — выделяется благодаря ритмичным линиям фасадов, выполненных в сочетании архитектурного бетона <br>и натурального камня.</p>
+										<button class="nav-map-quote__more" aria-label="Показать больше">
+											<svg>
+												<use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+											</svg>
+										</button>
+									</div>
+									<svg class="nav-map-quote__icon">
+										<use xlink:href="img/sprite.svg#icon-arrow-top-right"></use>
+									</svg>
+								</div>
+							</div>
+							<picture class="nav-map__bg">
+								<img src="img/map-district.svg" alt="Image">
+							</picture>
+						</div>
+						<div class="nav-map-tabs__holder">
+							<div class="nav-map__info">
+								<p class="nav-map__description">Близлежащие объекты и инфраструктура: ключевые места и удобства вокруг ЖК МАЯК</p>
+							</div>
+							<picture class="nav-map__compass nav-map__compass--lg">
+								<img src="img/icon-compass-city.svg" alt="Image">
+							</picture>
+							<picture class="nav-map__bg nav-map__bg--lg">
+								<img src="img/map-city.svg" alt="Image">
+							</picture>
+						</div>
+					</div>
 				</div>
 			</div>
 			<!-- end of nav map -->
@@ -286,6 +344,21 @@
 				</div>
 			</div>
 			<!-- end of main advantages -->
+			<!-- select case -->
+			<section class="select-case" id="select-case">
+				<div class="container">
+					<h2 class="select-case__heading animate">
+						ВЫБЕРИТЕ<br>
+						корпус<br>
+						НА ПЛАНЕ
+					</h2>
+				</div>
+				<a href="#" class="select-case__bg">
+					<img src="img/select-case-bg.jpg" alt="Image">
+					<span class="select-case__circle">Смотреть</span>
+				</a>
+			</section>
+			<!-- end of select case -->
 			<!-- services -->
 			<section class="services" id="services">
 				<div class="container">
@@ -636,43 +709,6 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
 </script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-	<script>
-		gsap.registerPlugin(ScrollTrigger);
-
-		gsap.utils.toArray('.animate').forEach(element => {
-			gsap.to(element, {
-				y: 0,
-				opacity: 1,
-				duration: 1.5,
-				ease: "power3.out",
-				scrollTrigger: {
-					trigger: element,
-					start: "top 90%",
-					end: "top 70%",
-					scrub: false,
-					toggleActions: "play none none none",
-				}
-			});
-		});
-
-		gsap.utils.toArray('.parallax-section').forEach(section => {
-			let image = section.querySelector('.parallax-image');
-
-			gsap.to(image, {
-				y: (index, target) => -target.offsetHeight * 0.2,
-				ease: "none",
-				scrollTrigger: {
-					trigger: section,
-					start: "top bottom",
-					end: "bottom top",
-					scrub: true,
-				}
-			});
-		});
-	</script>
 </body>
 
 </html>
