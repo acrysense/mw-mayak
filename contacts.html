@@ -359,14 +359,13 @@
 				YMapMarker
 			} = ymaps3;
 
-			const map = new YMap(
-				document.getElementById('contacts-map'), {
-					location: {
-						center: [37.588144, 55.733842],
-						zoom: 12
-					},
-				}
-			);
+			const mapContainer = document.getElementById('contacts-map');
+			const map = new YMap(mapContainer, {
+				location: {
+					center: [37.588144, 55.733842],
+					zoom: 12
+				},
+			});
 
 			const layer = new YMapDefaultSchemeLayer({
 				customization: [{
@@ -6873,6 +6872,32 @@
 				coordinates: [37.64, 55.76]
 			}, markerElement);
 			map.addChild(newMarker);
+
+			let ctrlPressed = false;
+
+			window.addEventListener('keydown', (e) => {
+				if (e.key === 'Control') {
+					ctrlPressed = true;
+					mapContainer.style.pointerEvents = 'auto'; // Разрешаем взаимодействие с картой
+				}
+			});
+
+			window.addEventListener('keyup', (e) => {
+				if (e.key === 'Control') {
+					ctrlPressed = false;
+					mapContainer.style.pointerEvents = 'none'; // Блокируем взаимодействие с картой
+				}
+			});
+
+			// Изначально отключаем взаимодействие с картой
+			mapContainer.style.pointerEvents = 'none';
+
+			// Предотвращаем скроллинг страницы при наведении на карту
+			mapContainer.addEventListener('wheel', (e) => {
+				if (!ctrlPressed) {
+					e.preventDefault(); // Предотвращаем зумирование карты, если Ctrl не зажат
+				}
+			});
 		}
 	</script>
 </body>
