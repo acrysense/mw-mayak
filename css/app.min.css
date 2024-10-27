@@ -1024,8 +1024,7 @@ svg {
   transition: all 0.25s ease-in-out, margin 0s;
 }
 
-.scroll-disabled,
-.lock-scroll {
+.scroll-disabled {
   overflow: hidden;
 }
 
@@ -2418,7 +2417,7 @@ svg {
 }
 .menu__img {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   display: block;
   overflow: hidden;
   width: 8.9583333333vw;
@@ -3974,8 +3973,8 @@ svg {
   display: block;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(212, 212, 212, 0)), to(#D4D4D4));
-  background: linear-gradient(180deg, rgba(212, 212, 212, 0) 0%, #D4D4D4 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#EEEEEE), to(#D4D4D4));
+  background: linear-gradient(180deg, #EEEEEE 0%, #D4D4D4 100%);
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
   opacity: 0;
@@ -5631,7 +5630,7 @@ svg {
 }
 .main-inner__heading {
   position: absolute;
-  top: calc(50% + 2.4305555556vw);
+  top: calc(50% + 6.9444444444vw);
   left: 50%;
   z-index: 10;
   -webkit-transform: translate(-50%, -50%);
@@ -5666,7 +5665,7 @@ svg {
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .main-inner__heading {
-    top: calc(50% + 5.3956834532vw);
+    top: calc(50% + 7.1942446043vw);
   }
 }
 @media screen and (max-width: 743px) {
@@ -5881,7 +5880,7 @@ svg {
 }
 @media screen and (min-width: 1024px) {
   .promo-quote__wrap {
-    padding: 0 6.25vw;
+    padding: 0 5.4340277778vw;
   }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
