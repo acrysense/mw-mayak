@@ -2437,6 +2437,18 @@ svg {
 .menu__img.is--active {
   opacity: 1;
 }
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .menu__img {
+    width: 15.4676258993vw;
+    height: 16.067146283vw;
+  }
+}
+@media screen and (max-width: 743px) {
+  .menu__img {
+    width: 16.4102564103vw;
+    height: 17.1794871795vw;
+  }
+}
 .menu__declaration {
   position: absolute;
   left: 50%;
