@@ -1619,6 +1619,11 @@ svg {
           transform: rotate(-45deg);
   width: 2.7083333333vw;
 }
+@media screen and (hover: hover) and (min-width: 1024px) {
+  .hamburger:hover .hamburger__inner {
+    width: 2.7083333333vw;
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .hamburger {
     margin-left: 5.9952038369vw;
@@ -2549,6 +2554,11 @@ svg {
           transform: translate(0, 0);
   opacity: 1;
   visibility: visible;
+}
+.navbar.is--active .navbar__logotype, .navbar.is--active .navbar__btn {
+  pointer-events: auto;
+}
+.navbar.is--active .hamburger {
   pointer-events: auto;
 }
 .navbar.is--menu {
@@ -2749,7 +2759,9 @@ svg {
   bottom: 0;
   left: 0;
   z-index: 1;
-  will-change: transform;
+  will-change: transform, opacity;
+  -webkit-transition: none;
+  transition: none;
 }
 .main__bg > *.is--hidden {
   opacity: 0;
@@ -3202,6 +3214,11 @@ svg {
   }
   .nav-map__dots:hover > svg {
     color: #FFFFFF;
+  }
+  .nav-map__dots:hover:not(.is--active) {
+    -webkit-transform: scale(1.5);
+        -ms-transform: scale(1.5);
+            transform: scale(1.5);
   }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
@@ -3978,6 +3995,13 @@ svg {
   max-width: 50vw;
   width: 100%;
   background: #FFFFFF;
+}
+@media screen and (hover: hover) and (min-width: 1024px) {
+  .nav-map-quote__wrapper:hover .nav-map-quote__icon {
+    -webkit-transform: translate(0.2083333333vw, -0.2083333333vw) scale(1.25);
+        -ms-transform: translate(0.2083333333vw, -0.2083333333vw) scale(1.25);
+            transform: translate(0.2083333333vw, -0.2083333333vw) scale(1.25);
+  }
 }
 @media screen and (max-width: 1023px) {
   .nav-map-quote__wrapper {
@@ -8709,7 +8733,7 @@ svg {
   z-index: 1;
   display: inline;
   overflow: hidden;
-  color: rgba(0, 0, 0, 0.3);
+  color: #000000;
   -webkit-transition: all 0.25s ease-in-out, color 0.45s cubic-bezier(0.86, 0, 0.07, 1);
   transition: all 0.25s ease-in-out, color 0.45s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -8736,12 +8760,9 @@ svg {
   transition: transform 0.45s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.45s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .contact-us-form__help a:hover {
-  color: rgba(0, 0, 0, 0.3);
+  color: #000000;
 }
 @media screen and (hover: hover) {
-  .contact-us-form__help a:hover {
-    color: #000000;
-  }
   .contact-us-form__help a:hover::before {
     -webkit-transform: scaleX(1);
         -ms-transform: scaleX(1);
@@ -10234,6 +10255,11 @@ svg {
     height: 24.6153846154vw;
   }
 }
+@media screen and (min-width: 744px) {
+  .not-found__body {
+    padding-right: 7.6388888889vw;
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .not-found__body {
     padding-left: 1.3189448441vw;
@@ -10263,7 +10289,7 @@ svg {
     font-size: 6.6666666667vw;
   }
 }
-@media screen and (max-height: 749px) {
+@media screen and (max-height: 749px) and (max-width: 1023px) {
   .not-found__title {
     display: none;
   }
@@ -10369,7 +10395,7 @@ svg {
     margin-left: 6.6666666667vw;
   }
 }
-@media screen and (max-height: 749px) {
+@media screen and (max-height: 749px) and (max-width: 1023px) {
   .not-found__back {
     position: absolute;
     left: 50%;
@@ -10611,7 +10637,7 @@ svg {
   z-index: 1;
   display: inline;
   overflow: hidden;
-  color: rgba(0, 0, 0, 0.3);
+  color: #000000;
   -webkit-transition: all 0.25s ease-in-out, color 0.45s cubic-bezier(0.86, 0, 0.07, 1);
   transition: all 0.25s ease-in-out, color 0.45s cubic-bezier(0.86, 0, 0.07, 1);
 }
@@ -10638,12 +10664,9 @@ svg {
   transition: transform 0.45s cubic-bezier(0.86, 0, 0.07, 1), -webkit-transform 0.45s cubic-bezier(0.86, 0, 0.07, 1);
 }
 .application-form__help a:hover {
-  color: rgba(0, 0, 0, 0.3);
+  color: #000000;
 }
 @media screen and (hover: hover) {
-  .application-form__help a:hover {
-    color: #000000;
-  }
   .application-form__help a:hover::before {
     -webkit-transform: scaleX(1);
         -ms-transform: scaleX(1);
