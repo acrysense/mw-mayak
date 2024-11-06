@@ -54,8 +54,8 @@
 			<section class="contacts" id="contacts">
 				<div class="container">
 					<div class="contacts__links">
-						<a href="tel:+78124265971" class="contacts__link">+7 812 426 59 71</a>
-						<a href="tel:+78124263232" class="contacts__link">+7 812 426 32 32</a>
+						<a href="tel:+79014686890" class="contacts__link">+7 (901) 468-68-90</a>
+						<a href="tel:+78002225299" class="contacts__link">+7 (800) 222-52-99</a>
 						<a href="mailto:info@mayak.ru" class="contacts__link">info@mayak.ru</a>
 					</div>
 					<div class="contacts__map" id="contacts-map"></div>
@@ -72,7 +72,8 @@
 				</picture>
 				<div class="footer__wrapper">
 					<div class="footer__info">
-						<a href="tel:+78124265971" class="footer__link">+7 812 426 59 71</a>
+						<a href="tel:+79014686890" class="footer__link">+7 (901) 468-68-90</a>
+						<a href="tel:+78002225299" class="footer__link">+7 (800) 222-52-99</a>
 						<a href="application.html" class="footer__link footer__link--accent">СВЯЗАТЬСЯ</a>
 					</div>
 					<picture class="footer__img">
@@ -234,10 +235,21 @@
 			} = ymaps3;
 
 			const mapContainer = document.getElementById('contacts-map');
+
+			let zoomLevel;
+
+			if (window.innerWidth >= 1024) {
+				zoomLevel = 17;
+			} else if ((window.innerWidth >= 768) && (window.innerWidth <= 1023)) {
+				zoomLevel = 16;
+			} else {
+				zoomLevel = 16;
+			}
+
 			const map = new YMap(mapContainer, {
 				location: {
-					center: [37.588144, 55.733842],
-					zoom: 12
+					center: [48.295605, 42.044961],
+					zoom: zoomLevel
 				},
 			});
 
@@ -6738,14 +6750,23 @@
 			map.addChild(layer);
 			map.addChild(new YMapDefaultFeaturesLayer());
 
-			const markerElement = document.createElement('img');
-			markerElement.className = 'icon-marker';
-			markerElement.src = 'img/icon-dot-map.svg';
+			const markerRC = document.createElement('img');
+			markerRC.className = 'icon-marker';
+			markerRC.src = 'img/icon-dot-map-rc.svg';
 
-			let newMarker = new YMapMarker({
-				coordinates: [37.64, 55.76]
-			}, markerElement);
-			map.addChild(newMarker);
+			const markerSales = document.createElement('img');
+			markerSales.className = 'icon-marker';
+			markerSales.src = 'img/icon-dot-map-sales.svg';
+
+			let newMarkerRC = new YMapMarker({
+				coordinates: [48.298523, 42.044935]
+			}, markerRC);
+			let newMarkerSales = new YMapMarker({
+				coordinates: [48.292712, 42.047644]
+			}, markerSales);
+
+			map.addChild(newMarkerRC);
+			map.addChild(newMarkerSales);
 
 			let ctrlPressed = false;
 
