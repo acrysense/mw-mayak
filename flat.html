@@ -19,6 +19,12 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 	<!-- styles -->
+	<style>
+		.is--loading {
+			opacity: 0;
+			pointer-events: none;
+		}
+	</style>
 	<link rel="stylesheet" href="css/vendor.min.css">
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
@@ -27,13 +33,13 @@
 	<!-- wrapper -->
 	<div class="wrapper">
 		<!-- header -->
-		<header class="header" id="header">
+		<header class="header @@header" id="header">
 			<div class="container">
 				<div class="header__wrapper">
 					<div class="header__inner">
 						<a href="index.html" class="header__logotype">
 							<img src="img/logotype.svg" width="269" height="44" alt="ЖК Маяк">
-							<img src="img/logotype-white.svg" width="269" height="44" alt="ЖК Маяк" class="white">
+							<img src="img/logotype-light.svg" width="269" height="44" alt="ЖК Маяк" class="white">
 						</a>
 						<button class="hamburger" aria-label="Меню">
 							<span class="hamburger__inner"></span>
@@ -287,7 +293,7 @@
 						<span class="hamburger__inner"></span>
 					</button>
 				</div>
-				<a href="#" class="navbar__btn">Выбор квартиры</a>
+				<a href="#select-case" class="navbar__btn">Выбор квартиры</a>
 			</div>
 		</div>
 	</div>

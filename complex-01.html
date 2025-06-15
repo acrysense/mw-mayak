@@ -19,6 +19,12 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 	<!-- styles -->
+	<style>
+		.is--loading {
+			opacity: 0;
+			pointer-events: none;
+		}
+	</style>
 	<link rel="stylesheet" href="css/vendor.min.css">
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
@@ -27,13 +33,13 @@
 	<!-- wrapper -->
 	<div class="wrapper">
 		<!-- header -->
-		<header class="header" id="header">
+		<header class="header @@header" id="header">
 			<div class="container">
 				<div class="header__wrapper">
 					<div class="header__inner">
 						<a href="index.html" class="header__logotype">
 							<img src="img/logotype.svg" width="269" height="44" alt="ЖК Маяк">
-							<img src="img/logotype-white.svg" width="269" height="44" alt="ЖК Маяк" class="white">
+							<img src="img/logotype-light.svg" width="269" height="44" alt="ЖК Маяк" class="white">
 						</a>
 						<button class="hamburger" aria-label="Меню">
 							<span class="hamburger__inner"></span>
@@ -53,6 +59,7 @@
 					<picture class="complex__bg-image">
 						<img src="img/complex-01.png" alt="Image" usemap="#image-map">
 					</picture>
+					<!-- area -->
 					<map name="image-map">
 						<area class="complex__area" data-complex="1" data-value="8" data-text="8 этаж&lt;br&gt;2 - 4 комнаты&lt;br&gt;58 - 133 м2" href="plans-01.html" coords="-3,383,117,370,799,525,794,640,114,536,-3,536" shape="poly">
 						<area class="complex__area" data-complex="1" data-value="7" data-text="7 этаж&lt;br&gt;2 - 4 комнаты&lt;br&gt;58 - 133 м2" href="plans-01.html" coords="8,541,112,541,799,643,799,719,117,671,3,665" shape="poly">
@@ -83,10 +90,164 @@
 						<area class="complex__area" data-complex="4" data-value="3" data-text="3 этаж&lt;br&gt;2 - 4 комнаты&lt;br&gt;58 - 133 м2" href="plans-01.html" coords="2348,980,2745,1043,2877,1048,2877,1160,2750,1160,2351,1056" shape="poly">
 						<area class="complex__area" data-complex="4" data-value="2" data-text="2 этаж&lt;br&gt;2 - 4 комнаты&lt;br&gt;58 - 133 м2" href="plans-01.html" coords="2351,1061,2740,1165,2875,1165,2875,1305,2750,1310,2351,1145" shape="poly">
 					</map>
+					<!-- 1 -->
+					<div class="complex__bg-svg" data-complex="1" data-value="8">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM57 185.5L399 264V320L57 269L-43 273.5V190L57 185.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="1" data-value="7">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM57 264.5L399.5 316V362L57 333L-43 334V269L57 264.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="1" data-value="6">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM57 326.5L399.5 358V404L57 396L-43 397V330L57 326.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="1" data-value="5">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM57 390L399.5 400V446L57 460L-43 459V391.5L57 390Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="1" data-value="4">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM57 454L399.5 442.5V488.5L57 523.5L-43 521.5V453L57 454Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="1" data-value="3">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM57 517L399.5 484.5V530.5L57 586.5L-43 584.5V516L57 517Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="1" data-value="2">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM57 580L399.5 526.5V581L57 658L-43 656V576L57 580Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<!-- 2 -->
+					<div class="complex__bg-svg" data-complex="2" data-value="8">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM399.5 279V326.5H712L723.5 334.5V297L712 279H399.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="2" data-value="7">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM399.5 327V364.5H712L723.5 372.5V345L712 327H399.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="2" data-value="6">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM399.5 365V402.5H712L723.5 404.5V371.5L712 364L399.5 365Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="2" data-value="5">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM399.5 403V439.5L712 440.5L723.5 437.5V402.5L712 402L399.5 403Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="2" data-value="4">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM399.5 441V477.5L712 478.5L723.5 472V437L712 440L399.5 441Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="2" data-value="3">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM399.5 479V515.5L712 516.5L723.5 510V475L712 478L399.5 479Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="2" data-value="2">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM399.5 516V549L473 548V553.5L712 554.5V548L723.5 535V506L712 516H399.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<!-- 3 -->
+					<div class="complex__bg-svg" data-complex="3" data-value="8">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM823 278.5L1171 277V325L814 326.5L823 278.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="3" data-value="7">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM811.5 326L1171 324.5V363.5L814 365L811.5 326Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="3" data-value="6">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM811.5 364.5L1171 363V402L814 402.5L811.5 364.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="3" data-value="5">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM819.5 402.5L1171 402V441L819.5 440.5V402.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="3" data-value="4">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM819.5 440.5L1171 440V479L819.5 478.5V440.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="3" data-value="3">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM819.5 479.5L1171 479V518L819.5 517.5V479.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="3" data-value="2">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM819.5 517.5L1171 517V571.5L1132 555.75L823 555.5V548L819.5 517.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="4" data-value="8">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM1170.5 260.5V316.5L1376 256.5H1442V173.5L1376 174.5L1170.5 260.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<!-- 4 -->
+					<div class="complex__bg-svg" data-complex="4" data-value="7">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM1170.5 313.5V356.5L1376 323.5H1442V256.5L1376 257.5L1170.5 313.5Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="4" data-value="6">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM1170.5 358V401L1376 389.5H1442V322.5L1376 323.5L1170.5 358Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="4" data-value="5">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM1170.5 401V444L1376 455.5H1442V388.5L1376 389.5L1170.5 401Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="4" data-value="4">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM1170.5 443V486L1376 522.5H1442V455.5L1376 456.5L1170.5 443Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="4" data-value="3">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM1170.5 485V528L1376 588.5H1442V521.5L1376 522.5L1170.5 485Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<div class="complex__bg-svg" data-complex="4" data-value="2">
+						<svg width="1440" height="855" viewBox="0 0 1440 855" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1573.26 0H-360.043V1090H1573.26V0ZM1170.5 531V574L1376 654.5H1442V587.5L1376 588.5L1170.5 531Z" fill="black" fill-opacity="0.4" />
+						</svg>
+					</div>
+					<!-- info -->
 					<div class="complex-info complex__info">
 						<span class="complex-info__value"></span>
 						<div class="complex-info__body">
 							<span class="complex-info__text"></span>
+						</div>
+						<div class="complex-info__circles">
+							<span class="complex-info__circle"></span>
+							<span class="complex-info__circle"></span>
+							<span class="complex-info__circle"></span>
+							<span class="complex-info__circle"></span>
+							<span class="complex-info__circle"></span>
+							<span class="complex-info__circle"></span>
+							<span class="complex-info__circle"></span>
 						</div>
 					</div>
 				</div>
@@ -240,7 +401,7 @@
 						<span class="hamburger__inner"></span>
 					</button>
 				</div>
-				<a href="#" class="navbar__btn">Выбор квартиры</a>
+				<a href="#select-case" class="navbar__btn">Выбор квартиры</a>
 			</div>
 		</div>
 	</div>
