@@ -25,6 +25,7 @@
 			pointer-events: none;
 		}
 	</style>
+	<link rel="stylesheet" href="css/critical.min.css">
 	<link rel="stylesheet" href="css/vendor.min.css">
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
@@ -57,17 +58,27 @@
 			<section class="plans" id="plans">
 				<div class="container">
 					<div class="plans__wrap">
-						<picture class="plans__img">
-							<img src="img/plans-01.svg" alt="Image" usemap="#image-map">
-						</picture>
-						<map name="image-map">
-							<area href="" coords="408,213,408,75,195,75,194,422,259,420,260,270,303,269,304,211" shape="poly">
-							<area href="" coords="268,278,266,423,407,422,407,279" shape="poly">
-							<area href="" coords="414,278,413,422,557,423,556,278" shape="poly">
-							<area href="" coords="561,277,561,424,701,424,702,277" shape="poly">
-							<area href="" coords="706,277,708,423,919,423,920,219,785,222,785,278" shape="poly">
-							<area href="" coords="919,206,919,72,561,73,564,209" shape="poly">
-						</map>
+						<div class="plans__wrap-inner">
+							<picture class="plans__img">
+								<img src="img/plans-01.svg" alt="Image" usemap="#image-map">
+							</picture>
+							<map name="image-map">
+								<area href="" coords="408,213,408,75,195,75,194,422,259,420,260,270,303,269,304,211" shape="poly">
+								<area href="" coords="268,278,266,423,407,422,407,279" shape="poly">
+								<area href="" coords="414,278,413,422,557,423,556,278" shape="poly">
+								<area href="" coords="561,277,561,424,701,424,702,277" shape="poly">
+								<area href="" coords="706,277,708,423,919,423,920,219,785,222,785,278" shape="poly">
+								<area href="" coords="919,206,919,72,561,73,564,209" shape="poly">
+							</map>
+							<svg class="plans__svg" viewBox="0 0 1835 768" preserveAspectRatio="xMinYMin meet">
+								<polygon data-label="1" points="408,213,408,75,195,75,194,422,259,420,260,270,303,269,304,211" />
+								<polygon data-label="1" points="268,278,266,423,407,422,407,279" />
+								<polygon data-label="1" points="414,278,413,422,557,423,556,278" />
+								<polygon data-label="1" points="561,277,561,424,701,424,702,277" />
+								<polygon data-label="1" points="706,277,708,423,919,423,920,219,785,222,785,278" />
+								<polygon data-label="1" points="919,206,919,72,561,73,564,209" />
+							</svg>
+						</div>
 						<div class="plans__links">
 							<a href="#" class="plans__link">4 этаж</a>
 							<a href="#" class="plans__link plans__link--prev">3 этаж</a>

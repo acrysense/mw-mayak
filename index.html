@@ -25,6 +25,7 @@
 			pointer-events: none;
 		}
 	</style>
+	<link rel="stylesheet" href="css/critical.min.css">
 	<link rel="stylesheet" href="css/vendor.min.css">
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
@@ -60,13 +61,13 @@
 			<!-- main -->
 			<section class="main" id="main">
 				<picture class="main__logotype">
-					<img src="img/logotype-icon-light.svg" alt="Image">
+					<img rel="preload" src="img/logotype-icon-light.svg" alt="Image">
 				</picture>
 				<picture class="main__bg">
-					<img src="img/main-bg.jpg" alt="Image">
+					<img rel="preload" src="img/main-bg.jpg" alt="Image">
 				</picture>
 				<picture class="main__preview">
-					<img src="img/main-bg-preview.jpg" alt="Image">
+					<img rel="preload" src="img/main-bg-preview.jpg" alt="Image">
 				</picture>
 				<div class="main__decor main__decor--first"></div>
 				<div class="main__decor main__decor--second"></div>
@@ -127,13 +128,6 @@
 										<button class="nav-map-amenities__tab" data-type="hospitals">
 											<svg>
 												<use xlink:href="img/sprite.svg#icon-hospitals"></use>
-											</svg>
-										</button>
-									</li>
-									<li class="nav-map-amenities__item">
-										<button class="nav-map-amenities__tab" data-type="medical">
-											<svg>
-												<use xlink:href="img/sprite.svg#icon-medical"></use>
 											</svg>
 										</button>
 									</li>
@@ -230,21 +224,21 @@
 									<use xlink:href="img/sprite.svg#icon-shop"></use>
 								</svg>
 							</button>
-							<button class="nav-map__dots nav-map__dots--shop-7" data-type="shops" data-address="ул. Пушкина, 47" data-heading="Панорама" data-icon="shop" data-type-name="Супермаркет">
-								<svg>
-									<use xlink:href="img/sprite.svg#icon-shop"></use>
-								</svg>
-							</button>
-							<button class="nav-map__dots nav-map__dots--shop-8" data-type="shops" data-address="ул. Пушкина, 47" data-heading="Панорама" data-icon="shop" data-type-name="Супермаркет">
-								<svg>
-									<use xlink:href="img/sprite.svg#icon-shop"></use>
-								</svg>
-							</button>
-							<button class="nav-map__dots nav-map__dots--shop-9" data-type="shops" data-address="ул. Пушкина, 50" data-heading="Панорама" data-icon="shop" data-type-name="Супермаркет">
-								<svg>
-									<use xlink:href="img/sprite.svg#icon-shop"></use>
-								</svg>
-							</button>
+							<!-- <button class="nav-map__dots nav-map__dots--shop-7" data-type="shops" data-address="ул. Пушкина, 47" data-heading="Панорама" data-icon="shop" data-type-name="Супермаркет">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#icon-shop"></use>
+                                </svg>
+                            </button>
+                            <button class="nav-map__dots nav-map__dots--shop-8" data-type="shops" data-address="ул. Пушкина, 47" data-heading="Панорама" data-icon="shop" data-type-name="Супермаркет">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#icon-shop"></use>
+                                </svg>
+                            </button>
+                            <button class="nav-map__dots nav-map__dots--shop-9" data-type="shops" data-address="ул. Пушкина, 50" data-heading="Панорама" data-icon="shop" data-type-name="Супермаркет">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#icon-shop"></use>
+                                </svg>
+                            </button> -->
 							<button class="nav-map__dots nav-map__dots--restaurants-1" data-type="restaurants" data-address="ул. Пушкина, 47" data-heading="Панорама" data-icon="restaurants" data-type-name="Ресторан">
 								<svg>
 									<use xlink:href="img/sprite.svg#icon-restaurants"></use>
@@ -285,19 +279,99 @@
 									<use xlink:href="img/sprite.svg#icon-hospitals"></use>
 								</svg>
 							</button>
-							<button class="nav-map__dots nav-map__dots--hospitals-3" data-type="hospitals" data-address="ул. Пушкина, 47" data-heading="Панорама" data-icon="hospitals" data-type-name="Больница">
+							<!-- <button class="nav-map__dots nav-map__dots--hospitals-3" data-type="hospitals" data-address="ул. Пушкина, 47" data-heading="Панорама" data-icon="hospitals" data-type-name="Больница">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#icon-hospitals"></use>
+                                </svg>
+                            </button>
+                            <button class="nav-map__dots nav-map__dots--hospitals-4" data-type="hospitals" data-address="ул. Пушкина, 47" data-heading="Панорама" data-icon="hospitals" data-type-name="Больница">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#icon-hospitals"></use>
+                                </svg>
+                            </button> -->
+							<button class="nav-map__dots nav-map__dots--medical-1" data-type="medical" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="medical" data-type-name="Медицина">
 								<svg>
-									<use xlink:href="img/sprite.svg#icon-hospitals"></use>
+									<use xlink:href="img/sprite.svg#icon-medical"></use>
 								</svg>
 							</button>
-							<button class="nav-map__dots nav-map__dots--hospitals-4" data-type="hospitals" data-address="ул. Пушкина, 47" data-heading="Панорама" data-icon="hospitals" data-type-name="Больница">
+							<button class="nav-map__dots nav-map__dots--medical-2" data-type="medical" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="medical" data-type-name="Медицина">
 								<svg>
-									<use xlink:href="img/sprite.svg#icon-hospitals"></use>
+									<use xlink:href="img/sprite.svg#icon-medical"></use>
 								</svg>
 							</button>
 							<button class="nav-map__dots nav-map__dots--lighthouse-1" data-type="lighthouse" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="lighthouse" data-type-name="Маяк">
 								<svg>
 									<use xlink:href="img/sprite.svg#icon-lighthouse"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-1" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-2" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-3" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-4" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-5" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-6" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-7" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-8" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-9" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-10" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--school-11" data-type="school" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="school" data-type-name="Обучение">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-school"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--kindergarten-1" data-type="kindergarten" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="kindergarten" data-type-name="Детский сад">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-kindergarten"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--kindergarten-2" data-type="kindergarten" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="kindergarten" data-type-name="Детский сад">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-kindergarten"></use>
+								</svg>
+							</button>
+							<button class="nav-map__dots nav-map__dots--fitness-1" data-type="fitness" data-address="ул. Пушкина, 47" data-distance="24 мин." data-heading="Панорама" data-icon="fitness" data-type-name="Фитнес">
+								<svg>
+									<use xlink:href="img/sprite.svg#icon-fitness"></use>
 								</svg>
 							</button>
 							<picture class="nav-map__bg">
